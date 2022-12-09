@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import image from "../../assets/1913977.jpg";
 export const PostList = () => {
   const [post, setPost] = useState([]);
+  const[currentPage, setCurrentPage]=useState(1);
+  const [postsPerPage, setPostsperpage]= useState(10)
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
   .then((result)=>{result.json()
@@ -24,6 +26,11 @@ export const PostList = () => {
        }
     });
     };
+const indexOfLastPost = currentPage*postsPerPage;
+const indexOfFirstPost= indexOfLastPost - postsPerPage;
+const currentPosts= post.slice(indexOfFirstPost, indexOfLastPost)
+
+
 
   return (
     <div className="row row-cols-1 row-cols-md-4 g-4">

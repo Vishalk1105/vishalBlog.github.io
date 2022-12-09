@@ -5,7 +5,7 @@ import { PostList } from "./Components/PostList/PostList.jsx";
 import { Post } from "./Components/Post/Post";
 import DetailPage from "./Components/UserPage/DetailPage/DetailPage";
 import UsersPhotosLists from "./Components/UserPage/DetailPage/UserDetailsComponent/UsersPhotosLists";
-import AddPost from "./Components/UserPage/DetailPage/UserDetailsComponent/AddPost";
+// import AddPost from "./Components/UserPage/DetailPage/UserDetailsComponent/AddPost";
 function App() {
   return (
     <div className="App">
@@ -19,7 +19,7 @@ function App() {
           <Route path="/userspage" element={<UsersPage />} />
           <Route exact path="/userspage/:id" element={<DetailPage />} />
           <Route exact path="/usersphotos/:id" element={<UsersPhotosLists />} />
-          <Route path="/addPost/:id" element={<AddPost/>}/>
+         
         </Route>
       </Routes>
     </div>
